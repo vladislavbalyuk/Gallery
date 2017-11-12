@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Gallery</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="message_delete">Delete file</string>
+    <string name="newAlbum">New album</string>
+    <string name="choiceAlbum">Choice album</string>
+    <string name="delete">Delete</string>
+
+    <string name="information">Information</string>
+    <string name="file">File:</string>
+    <string name="parametrs">Parametrs:</string>
+    <string name="datetime">Date of filming:</string>
+    <string name="position">Path:</string>
+    <string name="location">Location:</string>
+
+    <string name="light">Light</string>
+    <string name="nolight">No light</string>
+
+    <string name="deleteAfterCopy">Delete source</string>
+
+    <string name="API_KEY">AIzaSyAxKUMsoNe52TZP3y0GGgC3nXqO5rER0gE</string>
+
+</resources>

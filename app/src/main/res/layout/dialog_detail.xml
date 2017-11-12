@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="@string/information"
+        android:textStyle="bold"
+        android:paddingTop="20dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:text="@string/datetime"
+            android:textColor="#AAAAAA"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/textDateTime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textDateTime2"
+                android:textColor="#AAAAAA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <TextView
+            android:text="@string/file"
+            android:textColor="#AAAAAA"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/textName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textName2"
+                android:textColor="#AAAAAA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <TextView
+            android:text="@string/parametrs"
+            android:textColor="#AAAAAA"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textParametrs1"
+                android:textColor="#AAAAAA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textParametrs2"
+                android:textColor="#AAAAAA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <TextView
+            android:text="@string/position"
+            android:textColor="#AAAAAA"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/textPosition"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+        <TextView
+            android:text="@string/location"
+            android:textColor="#AAAAAA"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/textLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Галерея</string>
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Отмена</string>
+
+    <string name="message_delete">Удалить файл</string>
+    <string name="newAlbum">Новый альбом</string>
+    <string name="choiceAlbum">Выбор альбома</string>
+    <string name="delete">Удалить</string>
+
+    <string name="information">Информация</string>
+    <string name="file">Файл:</string>
+    <string name="parametrs">Параметры:</string>
+    <string name="datetime">Дата съемки:</string>
+    <string name="position">Расположение:</string>
+    <string name="location">Местоположение:</string>
+
+    <string name="light">Со вспышкой</string>
+    <string name="nolight">Без вспышки</string>
+
+    <string name="deleteAfterCopy">Удалять исходный файл</string>
+</resources>
