@@ -34,5 +34,6 @@ public class Album {
             dateSet.add(mediafile.getDateWithoutTime());
         }
         dateList.addAll(dateSet);
+        //
     }
 }
