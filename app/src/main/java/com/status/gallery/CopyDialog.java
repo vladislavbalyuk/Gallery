@@ -48,7 +48,7 @@ public class CopyDialog extends DialogFragment implements Settable{
 
     @Override
     public void setValue(Object value) {
-        if(!((String)value).trim().equals("")) {
+        if(value != null) {
 
             Pair pair = new Pair(value, new Boolean(checkBoxDeleteSource.isChecked()));
             settable.setValue(pair);

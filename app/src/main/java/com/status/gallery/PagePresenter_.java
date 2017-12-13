@@ -1,63 +1,68 @@
 package com.status.gallery;
 
-import android.view.View;
-
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class PagePresenter {
+public class PagePresenter_ {
+    private WeakReference<PageView_> view;
+    private MediaFile model;
 
-    private static ZoomImage zoomImage = new ZoomImage();
-
-    PageView view;
-
-    public PagePresenter(PageView view){
-        this.view = view;
+    public void setModel(MediaFile model) {
+        this.model = model;
     }
 
-    public boolean isImage(int pageNumber){
-        return Model.curAlbum.fileList.get(pageNumber).isImage();
+    public void bindView(PageView_ view) {
+        this.view = new WeakReference<>(view);
     }
 
-    public boolean isVideo(int pageNumber){
-        return Model.curAlbum.fileList.get(pageNumber).isVideo();
+    public void unbindView() {
+        this.view = null;
     }
 
-    public File getFile(int pageNumber){
-        return Model.curAlbum.fileList.get(pageNumber).getFile();
+    protected PageView_ view() {
+        if (view == null) {
+            return null;
+        } else {
+            return view.get();
+        }
+    }
+///////////////////////////////////////////////
+
+    public void setImageView() {
+        if (model.isImage()) {
+            view().setImageViewFromImageFile(model.getFile());
+        } else if (model.isVideo()) {
+            view().setImageViewFromVideoFile(model.getFile());
+        }
     }
 
-    public MediaFile getMediaFile(int pageNumber){
-        return Model.curAlbum.fileList.get(pageNumber);
+    public File getFile(){
+        return model.getFile();
     }
 
-    void initZoom(MediaFile mediafile){
-        zoomImage.init(view, mediafile);
+    public MediaFile getMediaFile(){
+        return model;
     }
-
-    View.OnTouchListener getListener(){
-        return zoomImage;
-    }
-
-    public void delete(int pageNumber){
-        File fileThumb = new File(Model.directoryThumbs, Model.curAlbum.fileList.get(pageNumber).getThumb() + ".jpg");
+    public void delete(){
+        File fileThumb = new File(Model.directoryThumbs, model.getThumb() + ".jpg");
         if(fileThumb.exists()){
             fileThumb.delete();
         }
-        Model.curAlbum.fileList.get(pageNumber).getFile().delete();
-        Model.curAlbum.fileList.remove(pageNumber);
+        model.getFile().delete();
+        Model.curAlbum.fileList.remove(model);
         Model.curAlbum.createDateList();
-        Model.dataBase.delete(Model.curAlbum.fileList.get(pageNumber).getFile().getAbsolutePath());
+        Model.dataBase.delete(model.getFile().getAbsolutePath());
 
     }
 
-    public void copyFileInAlbum(Album album, Boolean deleteSource, int pageNumber){
-        File destination = new File(album.getFile(), Model.curAlbum.fileList.get(pageNumber).getFile().getName());
-        File source = Model.curAlbum.fileList.get(pageNumber).getFile();
+    public void copyFileInAlbum(Album album, Boolean deleteSource){
+        File destination = new File(album.getFile(), model.getFile().getName());
+        File source = model.getFile();
         try {
             FileUtils.copyFile(source, destination);
         } catch (IOException e) {
@@ -65,7 +70,7 @@ public class PagePresenter {
         ;
 
         try {
-            MediaFile mediafile = Model.curAlbum.fileList.get(pageNumber).clone();
+            MediaFile mediafile = model.clone();
             mediafile.setFile(destination);
             album.fileList.add(mediafile);
             Collections.sort(album.fileList, new Comparator<MediaFile>() {
@@ -86,7 +91,7 @@ public class PagePresenter {
         ;
 
         if(deleteSource){
-            delete(pageNumber);
+            delete();
         }
     }
 
@@ -99,5 +104,6 @@ public class PagePresenter {
                 + (hour > 0 && min < 10?"0" + min:min)
                 + ":" + (sec < 10?"0" + sec:sec);
     }
+
 
 }

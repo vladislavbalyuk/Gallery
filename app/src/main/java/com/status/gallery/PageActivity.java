@@ -11,8 +11,7 @@ import android.view.WindowManager;
 public class PageActivity extends AppCompatActivity {
 
     private int position;
-    private CustomViewPager viewPager;
-    private PageFragment videoFragment;
+    private PageViewHolder pageViewHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,43 +21,32 @@ public class PageActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        setContentView(R.layout.activity_page);
 
         Intent intent = getIntent();
         position = intent.getIntExtra("position", 0);
 
-        viewPager = (CustomViewPager) findViewById(R.id.pager);
-        PageAdapter adapter = new PageAdapter(this, getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(position);
+        setContentView(R.layout.activity_page);
+
+//        viewPager = (CustomViewPager) findViewById(R.id.pager);//TEST
+//        PageAdapter adapter = new PageAdapter(this, getSupportFragmentManager());
+//        viewPager.setAdapter(adapter);
+//        viewPager.setCurrentItem(position);
 
     }
 
-    public void setPosition(int position){
+    public void setPosition(int position) {
         this.position = position;
     }
 
-    public int getPosition(){
+    public int getPosition() {
         return position;
-    }
-
-    public CustomViewPager getViewPager(){
-        return viewPager;
-    }
-
-    public boolean isPlayingMode() {
-        return videoFragment != null;
-    }
-
-    public void setFragment(PageFragment videoFragment) {
-        this.videoFragment = videoFragment;
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == (KeyEvent.KEYCODE_BACK) && isPlayingMode()) {
-            videoFragment.stopVideo();
-            videoFragment = null;
+        PageFragment_ fragment = (PageFragment_) getSupportFragmentManager().findFragmentById(R.id.fragment_page);
+        if (keyCode == (KeyEvent.KEYCODE_BACK) && fragment.isPlayingMode()) {
+            fragment.stopVideo();
             return true;
         }
         return super.onKeyDown(keyCode, event);

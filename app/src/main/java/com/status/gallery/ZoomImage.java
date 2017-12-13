@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,12 +46,12 @@ public class ZoomImage implements View.OnTouchListener {
 
     private Date dateTap;
 
-    PageView view;
+    PageFragment_ view;
     private ViewGroup ll;
     private MediaFile mediafile;
 
 
-    public void init(PageView view, MediaFile mediafile) {
+    public void init(PageFragment_ view, MediaFile mediafile) {
         this.view = view;
         if (bitmap != null && imageView != null) {
             if (fileLoaded) {
