@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.status.gallery.AlbumActivity">
+    tools:context="com.status.gallery.album.AlbumActivity">
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fragment_albums"
-        android:name="com.status.gallery.AlbumFragment">
+        android:name="com.status.gallery.album.AlbumFragment">
     </fragment>
 
 </android.support.constraint.ConstraintLayout>

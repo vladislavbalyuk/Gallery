@@ -1,4 +1,8 @@
-package com.status.gallery;
+package com.status.gallery.main;
+
+import com.status.gallery.Model;
+import com.status.gallery.main.MediaFile;
+import com.status.gallery.main.MediaFileView;
 
 import java.io.File;
 import java.lang.ref.WeakReference;

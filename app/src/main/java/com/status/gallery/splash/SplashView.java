@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.splash;
 
 import android.content.Context;
 

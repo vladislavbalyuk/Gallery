@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.main;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -6,6 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.status.gallery.Model;
+import com.status.gallery.R;
+import com.status.gallery.main.MainAdapter;
 
 public class MainFragment extends Fragment {
 

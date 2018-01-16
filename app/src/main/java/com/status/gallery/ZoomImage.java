@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,8 @@ import android.widget.ImageView;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+import com.status.gallery.main.MediaFile;
+import com.status.gallery.page.PageFragment;
 
 import java.lang.ref.WeakReference;
 import java.util.Date;
@@ -46,12 +47,12 @@ public class ZoomImage implements View.OnTouchListener {
 
     private Date dateTap;
 
-    PageFragment_ view;
+    PageFragment view;
     private ViewGroup ll;
     private MediaFile mediafile;
 
 
-    public void init(PageFragment_ view, MediaFile mediafile) {
+    public void init(PageFragment view, MediaFile mediafile) {
         this.view = view;
         if (bitmap != null && imageView != null) {
             if (fileLoaded) {

@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.main;
 
 import android.content.Context;
 import android.util.AttributeSet;

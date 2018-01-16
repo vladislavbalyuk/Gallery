@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.status.gallery.SplashActivity">
+    tools:context="com.status.gallery.splash.SplashActivity">
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fragment_splash"
-        android:name="com.status.gallery.SplashFragment">
+        android:name="com.status.gallery.splash.SplashFragment">
 
     </fragment>
 

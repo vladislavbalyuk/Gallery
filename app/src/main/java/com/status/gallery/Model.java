@@ -1,5 +1,7 @@
 package com.status.gallery;
 
+import com.status.gallery.album.Album;
+
 import java.io.File;
 import java.util.List;
 

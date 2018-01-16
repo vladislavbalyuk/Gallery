@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.album;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.status.gallery.main.MainActivity;
+import com.status.gallery.R;
+import com.status.gallery.Settable;
+import com.status.gallery.StringDialog;
 
 import java.io.File;
 

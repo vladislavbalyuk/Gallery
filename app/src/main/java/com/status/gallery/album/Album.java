@@ -1,4 +1,6 @@
-package com.status.gallery;
+package com.status.gallery.album;
+
+import com.status.gallery.main.MediaFile;
 
 import java.io.File;
 import java.util.ArrayList;

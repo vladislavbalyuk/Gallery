@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.page;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,15 +7,19 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class PageFragment_ extends Fragment {
+import com.status.gallery.Model;
+import com.status.gallery.R;
+import com.status.gallery.ZoomImage;
+import com.status.gallery.main.MediaFile;
+
+public class PageFragment extends Fragment {
 
     private View view;
-    private PageAdapter_ adapter;
+    private PageAdapter adapter;
     private RecyclerView viewPager;
     private CustomLayoutManager layoutManager;
     private PageViewHolder pageViewHolder;
@@ -50,7 +54,7 @@ public class PageFragment_ extends Fragment {
             snapHelper.attachToRecyclerView(viewPager);
 
             viewPager.setLayoutManager(layoutManager);
-            adapter = new PageAdapter_(getActivity(), Model.curAlbum.fileList, this);
+            adapter = new PageAdapter(getActivity(), Model.curAlbum.fileList, this);
             viewPager.setAdapter(adapter);
             int position = ((PageActivity)getActivity()).getPosition();
             viewPager.getLayoutManager().scrollToPosition(position);
@@ -83,7 +87,9 @@ public class PageFragment_ extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
- //       currentPosition = pageViewHolder.getCurrentPositionVideo();
+        if(pageViewHolder != null) {
+            currentPosition = pageViewHolder.getCurrentPositionVideo();
+        }
     }
 
     public int getCurrentPosition() {

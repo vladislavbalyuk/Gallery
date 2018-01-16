@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.page;
 
 import android.app.Activity;
 import android.graphics.BitmapFactory;
@@ -9,7 +9,6 @@ import android.os.SystemClock;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,14 +19,20 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.squareup.picasso.Picasso;
+import com.status.gallery.CopyDialog;
+import com.status.gallery.DeleteDialog;
+import com.status.gallery.DetailDialog;
+import com.status.gallery.R;
+import com.status.gallery.Settable;
+import com.status.gallery.album.Album;
 
 import java.io.File;
 import java.util.concurrent.ThreadPoolExecutor;
 
-public class PageViewHolder extends RecyclerView.ViewHolder implements PageView_, Settable, View.OnTouchListener {
-    private PagePresenter_ presenter;
+public class PageViewHolder extends RecyclerView.ViewHolder implements PageView, Settable, View.OnTouchListener {
+    private PagePresenter presenter;
 
-    private PageFragment_ fragment;
+    private PageFragment fragment;
     private ImageView imageView;
     private VideoView videoView;
     private ImageButton btnDelete, btnCopy, btnDetail;
@@ -43,7 +48,7 @@ public class PageViewHolder extends RecyclerView.ViewHolder implements PageView_
 
     private Picasso picasso;
 
-    PageViewHolder(View view, int viewType, PageFragment_ fragment) {
+    PageViewHolder(View view, int viewType, PageFragment fragment) {
 
         super(view);
         if (viewType == 1) {
@@ -131,7 +136,7 @@ public class PageViewHolder extends RecyclerView.ViewHolder implements PageView_
         });
     }
 
-    public void bindPresenter(PagePresenter_ presenter) {
+    public void bindPresenter(PagePresenter presenter) {
         this.presenter = presenter;
         presenter.bindView(this);
 
@@ -148,7 +153,7 @@ public class PageViewHolder extends RecyclerView.ViewHolder implements PageView_
     public void setImageViewFromImageFile(File file) {
         int width, height;
 
-        imageView.setOnTouchListener(PageFragment_.zoomImage);
+        imageView.setOnTouchListener(PageFragment.zoomImage);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((Activity) imageView.getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

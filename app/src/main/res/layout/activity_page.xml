@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.status.gallery.PageActivity">
+    tools:context="com.status.gallery.page.PageActivity">
     <!--<com.status.gallery.CustomViewPager-->
         <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
         <!--android:id="@+id/pager"-->
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fragment_page"
-        android:name="com.status.gallery.PageFragment_">
+        android:name="com.status.gallery.page.PageFragment">
     </fragment>
 
 </android.support.constraint.ConstraintLayout>

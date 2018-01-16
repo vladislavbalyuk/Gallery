@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.page;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,21 +6,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.status.gallery.Model;
+import com.status.gallery.R;
+import com.status.gallery.Settable;
+import com.status.gallery.main.MediaFile;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class PageAdapter_ extends RecyclerView.Adapter<PageViewHolder> {
+class PageAdapter extends RecyclerView.Adapter<PageViewHolder> {
 
     private LayoutInflater inflater;
     private List<MediaFile> list;
-    private PageFragment_ fragment;
+    private PageFragment fragment;
 
     private Settable settable;
 
-    private Map<Object, PagePresenter_> presenters;// MVP
+    private Map<Object, PagePresenter> presenters;// MVP
 
-    PageAdapter_(Context context, List<MediaFile> list, PageFragment_ fragment) {
+    PageAdapter(Context context, List<MediaFile> list, PageFragment fragment) {
         this.list = list;
         this.inflater = LayoutInflater.from(context);
         this.fragment = fragment;
@@ -56,7 +61,7 @@ class PageAdapter_ extends RecyclerView.Adapter<PageViewHolder> {
         final MediaFile mediaFile = list.get(position);
 
 //--------------------------MVP------------------------------
-        PagePresenter_ presenter = getPresenter(mediaFile);
+        PagePresenter presenter = getPresenter(mediaFile);
         if(presenter == null){
             presenter = createPresenter(mediaFile);
         }
@@ -91,12 +96,12 @@ class PageAdapter_ extends RecyclerView.Adapter<PageViewHolder> {
 
 
     //--------------------------MVP------------------------------
-    private PagePresenter_ getPresenter(MediaFile mediaFile) {
+    private PagePresenter getPresenter(MediaFile mediaFile) {
         return presenters.get(mediaFile);
     }
 
-    protected PagePresenter_ createPresenter(MediaFile mediaFile) {
-        PagePresenter_ presenter = new PagePresenter_();
+    protected PagePresenter createPresenter(MediaFile mediaFile) {
+        PagePresenter presenter = new PagePresenter();
         presenter.setModel(mediaFile);
         return presenter;
     }

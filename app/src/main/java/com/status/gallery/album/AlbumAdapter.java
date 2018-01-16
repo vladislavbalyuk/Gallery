@@ -1,10 +1,13 @@
-package com.status.gallery;
+package com.status.gallery.album;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.status.gallery.R;
+import com.status.gallery.Settable;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +23,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumViewHolder> {
     private Map<Object, AlbumPresenter> presenters;// MVP
 
 
-    AlbumAdapter(Context context, List<Album> list) {
+    public AlbumAdapter(Context context, List<Album> list) {
         this.list = list;
         this.inflater = LayoutInflater.from(context);
         this.presenters = new HashMap<>();// MVP

@@ -1,4 +1,6 @@
-package com.status.gallery;
+package com.status.gallery.main;
+
+import com.status.gallery.Model;
 
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;

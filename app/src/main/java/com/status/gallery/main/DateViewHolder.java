@@ -1,10 +1,16 @@
-package com.status.gallery;
+package com.status.gallery.main;
 
 import android.content.res.Configuration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import com.status.gallery.R;
+import com.status.gallery.main.DatePresenter;
+import com.status.gallery.main.DateView;
+import com.status.gallery.main.MainActivity;
+import com.status.gallery.main.MediaFileAdapter;
 
 public class DateViewHolder extends RecyclerView.ViewHolder implements DateView {
     final TextView textView;

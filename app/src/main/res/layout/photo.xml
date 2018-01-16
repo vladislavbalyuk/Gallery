@@ -4,10 +4,10 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.status.gallery.GridViewItem xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.status.gallery.main.GridViewItem xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/imageView"
         android:layout_width="100px"
         android:layout_height="100px"
         android:scaleType="centerCrop">
-    </com.status.gallery.GridViewItem>
+    </com.status.gallery.main.GridViewItem>
 </LinearLayout>

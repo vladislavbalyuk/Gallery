@@ -1,10 +1,10 @@
-package com.status.gallery;
+package com.status.gallery.page;
 
 import android.content.Context;
 
 import java.io.File;
 
-public interface PageView_ {
+public interface PageView {
     void setImageViewFromImageFile(File file);
 
     void setImageViewFromVideoFile(File file);

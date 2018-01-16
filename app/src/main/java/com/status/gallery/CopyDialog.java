@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.CheckBox;
 
+import com.status.gallery.album.AlbumAdapter;
+
 public class CopyDialog extends DialogFragment implements Settable{
 
     private Settable settable;

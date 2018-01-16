@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteCantOpenDatabaseException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.status.gallery.main.MediaFile;
+
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

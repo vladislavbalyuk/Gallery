@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.main;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,6 +11,9 @@ import android.widget.LinearLayout;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+import com.status.gallery.Model;
+import com.status.gallery.page.PageActivity;
+import com.status.gallery.R;
 
 import java.io.File;
 import java.io.FileOutputStream;

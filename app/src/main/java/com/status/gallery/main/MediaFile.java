@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.main;
 
 import java.io.File;
 import java.util.Date;

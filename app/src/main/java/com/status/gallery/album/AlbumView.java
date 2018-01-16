@@ -1,6 +1,9 @@
-package com.status.gallery;
+package com.status.gallery.album;
 
 import android.content.Context;
+
+import com.status.gallery.Settable;
+import com.status.gallery.album.Album;
 
 import java.io.File;
 

@@ -1,6 +1,9 @@
-package com.status.gallery;
+package com.status.gallery.splash;
 
-import android.util.Log;
+import com.status.gallery.DataBase;
+import com.status.gallery.main.MediaFile;
+import com.status.gallery.Model;
+import com.status.gallery.album.Album;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

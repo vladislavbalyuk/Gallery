@@ -1,4 +1,8 @@
-package com.status.gallery;
+package com.status.gallery.page;
+
+import com.status.gallery.Model;
+import com.status.gallery.album.Album;
+import com.status.gallery.main.MediaFile;
 
 import org.apache.commons.io.FileUtils;
 
@@ -8,15 +12,15 @@ import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class PagePresenter_ {
-    private WeakReference<PageView_> view;
+public class PagePresenter {
+    private WeakReference<PageView> view;
     private MediaFile model;
 
     public void setModel(MediaFile model) {
         this.model = model;
     }
 
-    public void bindView(PageView_ view) {
+    public void bindView(PageView view) {
         this.view = new WeakReference<>(view);
     }
 
@@ -24,7 +28,7 @@ public class PagePresenter_ {
         this.view = null;
     }
 
-    protected PageView_ view() {
+    protected PageView view() {
         if (view == null) {
             return null;
         } else {

@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.album;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+
+import com.status.gallery.Model;
+import com.status.gallery.R;
+import com.status.gallery.album.AlbumAdapter;
 
 public class AlbumFragment extends Fragment {
 

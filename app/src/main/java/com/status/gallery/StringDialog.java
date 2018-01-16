@@ -55,7 +55,7 @@ public class StringDialog extends DialogFragment implements View.OnClickListener
         dismiss();
     }
 
-    void setSettable(Settable settable) {
+    public void setSettable(Settable settable) {
         this.settable = settable;
     }
 

@@ -1,4 +1,4 @@
-package com.status.gallery;
+package com.status.gallery.splash;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -12,6 +12,9 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.status.gallery.R;
+import com.status.gallery.album.AlbumActivity;
 
 import java.io.File;
 import java.io.IOException;
