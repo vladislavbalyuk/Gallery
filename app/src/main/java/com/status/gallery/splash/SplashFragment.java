@@ -1,13 +1,16 @@
 package com.status.gallery.splash;
 
+import android.Manifest;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.ExifInterface;
 import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,9 +51,20 @@ public class SplashFragment extends Fragment implements SplashView {
         } else {
             view = inflater.inflate(R.layout.fragment_splash, container, false);
 
-            new MyAsyncTask().execute();
+            if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(),
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        0);
+            }
+            else
+                startMyAsyncTask();
         }
         return view;
+    }
+
+    public void startMyAsyncTask() {
+        new MyAsyncTask().execute();
     }
 
     public HashMap<String, Integer> getScreenResolution() {
