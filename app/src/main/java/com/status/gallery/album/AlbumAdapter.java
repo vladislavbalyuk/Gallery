@@ -33,6 +33,11 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumViewHolder> {
     public AlbumViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = inflater.inflate(R.layout.album, parent, false);
+        view.getLayoutParams().width = ((RecyclerView) parent).getLayoutManager().getWidth();
+//        view.setLayoutParams(new RecyclerView.LayoutParams(
+//                ((RecyclerView) parent).getLayoutManager().getWidth(),100));
+
+
         final AlbumViewHolder holder = new AlbumViewHolder(view);
         if(settable != null){
             holder.hideTextViewCount();
